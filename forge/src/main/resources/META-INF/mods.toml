@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="Apache 2.0"
+#issueTrackerURL="https://github.com/manifold/issues"
+
+[[mods]]
+modId="manifold"
+version="${version}"
+displayName="Manifold"
+displayURL="https://manifold.systems"
+logoFile="icon.png"
+credits="rdh"
+authors="Scott McKinney"
+displayTest="IGNORE_ALL_VERSION"
+
+description='''
+Provides support for the Manifold compiler plugin in other peoples' mods.
+'''
+[[dependencies.manifold]]
+   modId="forge"
+   mandatory=true
+   versionRange="[43,)"
+   ordering="NONE"
+   side="BOTH"
+[[dependencies.manifold]]
+   modId="minecraft"
+   mandatory=true
+   versionRange="[1.19.2,1.20)"
+   ordering="NONE"
+   side="BOTH"

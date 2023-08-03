@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "manifold",
+  "version": "${version}",
+
+  "name": "Manifold",
+  "description": "Provides support for the Manifold compiler plugin in other peoples' mods.",
+  "authors": [],
+  "contact": {},
+
+  "license": "Apache 2.0",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "manifold.mod.fabric.ManifoldFabric"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "minecraft": ">=1.19.2"
+  }
+}
