@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[forge,)"
 license="Apache 2.0"
 #issueTrackerURL="https://github.com/manifold/issues"
 
@@ -19,12 +19,12 @@ Provides support for the Manifold compiler plugin in other peoples' mods.
 [[dependencies.manifold]]
    modId="forge"
    mandatory=true
-   versionRange="[43,)"
+   versionRange="[forge,)"
    ordering="NONE"
    side="BOTH"
 [[dependencies.manifold]]
    modId="minecraft"
    mandatory=true
-   versionRange="[1.19.2,1.20)"
+   versionRange="[mc,)"
    ordering="NONE"
    side="BOTH"

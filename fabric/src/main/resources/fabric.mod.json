@@ -5,7 +5,7 @@
 
   "name": "Manifold",
   "description": "Provides support for the Manifold compiler plugin in other peoples' mods.",
-  "authors": [],
+  "authors": ["Scott McKinney", "rdh"],
   "contact": {},
 
   "license": "Apache 2.0",
@@ -18,7 +18,12 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.22",
-    "minecraft": ">=1.19.2"
+    "fabricloader": ">=${fabric}",
+    "minecraft": ">=${mc}"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ]
+    }
   }
 }

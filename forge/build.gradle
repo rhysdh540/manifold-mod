@@ -15,17 +15,23 @@ configurations {
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.forge_version}"
+    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
 
 processResources {
-    inputs.property "version", project.version
+    def props = [
+            "version": rootProject.mod_version,
+            "mc": rootProject.minecraft_version,
+            "forge": rootProject.forge_version.split("\\.")[0],
+    ]
+
+    inputs.properties props
 
     filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
+        expand props
     }
 }
 

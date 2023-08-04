@@ -16,17 +16,28 @@ configurations {
 }
 
 dependencies {
+    repositories {
+        maven { url = "https://maven.terraformersmc.com/releases/" }
+    }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api}+${rootProject.minecraft_version}"
+    modImplementation "com.terraformersmc:modmenu:${rootProject.mod_menu}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
 
 processResources {
-    inputs.property "version", project.version
+    def props = [
+            "version": rootProject.mod_version,
+            "mc": rootProject.minecraft_version,
+            "fabric": rootProject.fabric_loader_version,
+    ]
+
+    inputs.properties props
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand props
     }
 }
 
