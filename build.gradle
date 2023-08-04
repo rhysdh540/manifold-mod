@@ -24,6 +24,12 @@ subprojects {
     }
 
     dependencies {
+        repositories {
+            mavenCentral()
+            maven { url = "https://maven.parchmentmc.org" }
+            maven { url = "https://maven.quiltmc.org/repository/release" }
+        }
+
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
 
         mappings(loom.layered {
@@ -68,6 +74,7 @@ allprojects {
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
         options.release = 17
+        options.compilerArgs += ['-Xplugin:Manifold']
     }
 
     java {
