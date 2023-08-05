@@ -1,13 +1,21 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "1.3-SNAPSHOT" apply false
+    id "io.github.pacifistmc.forgix" version "1.2.6"
 }
 
 architectury {
     minecraft = rootProject.minecraft_version
 }
+version = rootProject.manifold.split("-")[0]
 
-subprojects {
+forgix {
+    group = "systems.manifold.mod"
+    mergedJarName = "manifold-${version}+mc${minecraft_version}.jar"
+    outputDir = "build/libs/merged"
+}
+
+subprojects { p ->
     apply plugin: "dev.architectury.loom"
 
     configurations {
@@ -81,6 +89,8 @@ subprojects {
         addJarCompile getMavenCoords("xml")
         addJarCompile getMavenCoords("yaml")
     }
+
+    remapJar.finalizedBy(mergeJars)
 }
 
 allprojects {
