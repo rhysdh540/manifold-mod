@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 architectury {
@@ -29,7 +29,7 @@ dependencies {
 
 processResources {
     def props = [
-            "version": rootProject.mod_version,
+            "version": rootProject.manifold.split("-")[0],
             "mc": rootProject.minecraft_version,
             "fabric": rootProject.fabric_loader_version,
     ]

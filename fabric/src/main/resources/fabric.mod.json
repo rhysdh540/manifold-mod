@@ -5,7 +5,7 @@
 
   "name": "Manifold",
   "description": "Provides support for the Manifold compiler plugin in other peoples' mods.",
-  "authors": ["Scott McKinney", "rdh"],
+  "authors": [ "Scott McKinney" ],
   "contact": {},
 
   "license": "Apache 2.0",
